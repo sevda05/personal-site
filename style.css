@@ -1,26 +1,70 @@
 body {
   margin: 0;
-  font-family: sans-serif;
-}
-
-/* The Pixi canvas sits behind the text */
-canvas {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: -1;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #f8f2ff;
+  background: linear-gradient(135deg, #120d20, #30204a);
 }
 
 main {
-  max-width: 40rem;
-  padding: 2rem;
+  position: relative;
+  z-index: 1;
+  max-width: 50rem;
+  margin: 0 auto;
+  padding: 36px 16px;
 }
 
-.projektbild {
+/* Pixi-prickarna ligger bakom innehållet */
+canvas {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(2rem, 6vw, 3rem);
+  line-height: 1.15;
+  color: #ff8edb;
+  text-shadow: 0 0 16px #ff2ca8;
+}
+
+h2 {
+  margin-top: 0;
+  color: #77dfff;
+}
+
+.panel {
+  margin: 24px 0;
+  padding: 18px;
+  background: #171022;
+  border-left: 3px solid #ff2ca8;
+  border-radius: 12px;
+}
+
+.panel p:last-child {
+  margin-bottom: 0;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.gallery img {
   display: block;
   width: 100%;
-  max-width: 700px;
-  height: auto;
-  margin: 20px auto;
-  border-radius: 12px;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+video {
+  display: block;
+  width: 100%;
+  max-width: 420px;
+  max-height: 550px;
+  background: #08060c;
+  border-radius: 8px;
 }

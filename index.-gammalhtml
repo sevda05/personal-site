@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The Music Fountain</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <h1>The Music Fountain</h1>
+    <p>Created by Sevda Nowbakht and [Partner’s name]</p>
+
+    <h2>About the project</h2>
+    <p>
+      We are two students at Södertörn University who made an interactive
+      music fountain. We wanted to make something people could walk up to
+      and start playing together. We built three instruments with micro:bits
+      that send signals to a computer. Each instrument plays a different
+      sound and creates a fountain of coloured light on the screen.
+    </p>
+    <p>
+      When people play together, the colours meet and form a moving pattern.
+      We chose neon colours and techno sounds to give the project a rave feel.
+      Players can also add a bassline, record their music and listen back to
+      what they made.
+    </p>
+
+    <h2>Project gallery</h2>
+    <div class="gallery">
+      <img src="bild-2.PNG" alt="The Music Fountain setup">
+      <img src="bild-3.jpg" alt="The project under coloured lights">
+      <img src="bild-4.jpg" alt="The instruments at the rave">
+      <img src="bild-5.jpg" alt="Visitors trying the installation">
+      <img src="bild-6.PNG" alt="Playing an instrument beside the light display">
+    <div class="gallery-video">
+  
+  
+  
+  
+      <h3>See it in action</h3>
+  <video controls playsinline preload="metadata" poster="musikfontan.png">
+    <source src="musikfontan.mp4.MOV" type="video/quicktime">
+  </video>
+</div>
+    
+   
+  <script src="https://cdn.jsdelivr.net/npm/pixi.js@8.6.6/dist/pixi.min.js"></script>
+  <script type="module" src="main.js"></script>
+</body>
+</html>

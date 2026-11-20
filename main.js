@@ -1,26 +1,30 @@
-// Start Pixi and put its canvas on the page
 const app = new PIXI.Application();
-await app.init({ resizeTo: window, background: "#ffffff" });
+await app.init({ resizeTo: window, backgroundAlpha: 0 });
 document.body.appendChild(app.canvas);
 
 const dots = new PIXI.Graphics();
 app.stage.addChild(dots);
 
-// Remember where the mouse is
-const mouse = { x: 0, y: 0 };
-window.addEventListener("pointermove", (e) => {
-  mouse.x = e.clientX;
-  mouse.y = e.clientY;
+// Spara musens position
+const mouse = { x: -1000, y: -1000 };
+
+window.addEventListener("pointermove", (event) => {
+  mouse.x = event.clientX;
+  mouse.y = event.clientY;
 });
 
-// Every frame: a grid of dots that grow when the mouse is near
+// Rita ett rutnät av prickar som reagerar på musen
 app.ticker.add(() => {
   dots.clear();
-  for (let x = 0; x < app.screen.width; x += 30) {
-    for (let y = 0; y < app.screen.height; y += 30) {
+
+  for (let x = 15; x < app.screen.width; x += 30) {
+    for (let y = 15; y < app.screen.height; y += 30) {
       const distance = Math.hypot(x - mouse.x, y - mouse.y);
-      dots.circle(x, y, Math.max(1, 8 - distance / 30));
+      const radius = Math.max(1, 8 - distance / 30);
+      const nearMouse = distance < 150;
+      const color = nearMouse ? 0xff2ca8 : 0x77dfff;
+
+      dots.circle(x, y, radius).fill({ color: color, alpha: 0.35 });
     }
   }
-  dots.fill("#2b44d6");
 });
